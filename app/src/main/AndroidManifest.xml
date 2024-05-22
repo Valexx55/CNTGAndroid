@@ -17,6 +17,8 @@
             android:exported="false" />
         <activity
             android:name=".imc.IMCActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboard|screenSize"
             android:exported="true">
 
             <!-- COMENATARIOS TIPO XML / HTML DECLARO LAS ACTIVIES -->
