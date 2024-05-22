@@ -46,6 +46,7 @@ class IMCActivity : AppCompatActivity() {
         //TODO transitar a la actividad resultado, para mostrar con una foto
         //el tipo de IMC que tiene el usuario
         val intentResultado : Intent = Intent(this, ResultadoImcActivity::class.java)
+        intentResultado.putExtra("IMC_RESULTADO", imc)//guardo en el saco el imc
         startActivity(intentResultado)//lanzo la otra pantalla de resultado EXPLÍCITO
     }
 }
