@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import edu.`val`.cntgapp.R
+import edu.`val`.cntgapp.util.Constantes
 
 //ESTO ES UNA PANTALLA
 //EN EL CÓDIGO FUENTE, AQUÍ, PROGRAMAMAMOS LA FUNCIONALIDAD
@@ -24,7 +25,7 @@ class VersionesActivity : AppCompatActivity() {
 //TODO EXPLICAR BIEN EL LOG CON EL DEBUG
         //HACEMOS UNA APP QUE INFORME DEL API (NUMERO DEL SDK)
         //DE ANDROID DONDE SE ESTÁ EJECUTANDO LA APLICACIÓN
-        Log.d("MIETIQUETA", "HA pasado por Oncreate")
+        Log.d(Constantes.ETIQUETA_LOG, "HA pasado por Oncreate")
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
@@ -36,7 +37,7 @@ class VersionesActivity : AppCompatActivity() {
 
         val strVersion = obtenerVersionAndroid()
 
-        Log.d("MIETIQUETA", "La versión del móvil es $strVersion")//plantilla para evitar concatenar
+        Log.d(Constantes.ETIQUETA_LOG, "La versión del móvil es $strVersion")//plantilla para evitar concatenar
         //Log.d("MIETIQUETA","El nombre de la versión es ${Build.VERSION.CODENAME}")//plantilla para evitar concatenar
 
         val cajaTexto:TextView = findViewById<TextView>(R.id.textViewNombre)//1 pillo la caja

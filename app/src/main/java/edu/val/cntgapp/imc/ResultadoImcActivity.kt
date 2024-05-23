@@ -29,20 +29,20 @@ class ResultadoImcActivity : AppCompatActivity() {
         when
         {
             resultadoImc < 16 -> {
-                this.mostarResultado(R.drawable.imc_desnutrido, "DESNUTRIDO")
+                this.mostarResultado(R.drawable.imc_desnutrido, TipoImc.DESNUTRIDO.toString())
             }
             resultadoImc >= 16 && resultadoImc < 18  -> {
-                this.mostarResultado(R.drawable.imc_delgado, "DELGADO")
+                this.mostarResultado(R.drawable.imc_delgado, TipoImc.DELGADO.toString())
             }
             resultadoImc >= 18 && resultadoImc < 25 -> {
-                this.mostarResultado(R.drawable.imc_ideal, "IDEAL")
+                this.mostarResultado(R.drawable.imc_ideal, TipoImc.IDEAL.toString())
 
             }
             resultadoImc >= 25 && resultadoImc < 31 -> {
-                this.mostarResultado(R.drawable.imc_sobrepeso, "SOBREPESO")
+                this.mostarResultado(R.drawable.imc_sobrepeso, TipoImc.SOBREPESO.toString())
             }
             resultadoImc > 31 -> {
-                this.mostarResultado(R.drawable.imc_obeso, "OBESO")
+                this.mostarResultado(R.drawable.imc_obeso, TipoImc.OBESO.toString())
 
             }
         }

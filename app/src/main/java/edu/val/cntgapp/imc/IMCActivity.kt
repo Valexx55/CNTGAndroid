@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import edu.`val`.cntgapp.R
+import edu.`val`.cntgapp.util.Constantes
 
 
 //imc = PESO / ALTURA AL CUADRADO
@@ -30,7 +31,7 @@ class IMCActivity : AppCompatActivity() {
 
     fun calcularIMC(view: View)//:Unit cuando no devuelve nada
     {
-        Log.d("MIAPP", "Botón calcular IMC ha sido tocado")
+        Log.d(Constantes.ETIQUETA_LOG, "Botón calcular IMC ha sido tocado")
 
         //1obtener peso
         val etpeso = findViewById<EditText>(R.id.editTextPeso)
@@ -39,7 +40,9 @@ class IMCActivity : AppCompatActivity() {
         val etaltura = findViewById<EditText>(R.id.editTextAltura)
         val altura = etaltura.text.toString().toFloat()
         //3calcular el imc
-        val imc = peso / (altura*altura)
+        //val imc = peso / (altura*altura)
+        val oimc= IMC(peso, altura)
+        val imc = oimc.calcularImc()
         //4informar resultado
         val aviso = Toast.makeText(this, "Su IMC es $imc", Toast.LENGTH_LONG)
         aviso.show()
