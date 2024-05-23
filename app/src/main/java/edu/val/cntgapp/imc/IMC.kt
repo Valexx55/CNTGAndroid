@@ -10,4 +10,6 @@ class IMC (val peso:Float, val altura:Float) {
 
         return imcNumerico
     }
+
+
 }
