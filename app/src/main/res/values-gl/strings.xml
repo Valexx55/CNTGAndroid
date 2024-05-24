@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mensaje_peso">Canto pesas</string>
+    <string name="mensaje_altura">Canto mides</string>
+    <string name="boton_calcular">CALCULAR</string>
+</resources>
