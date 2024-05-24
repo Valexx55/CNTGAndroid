@@ -73,7 +73,12 @@ class AdivinaActivity : AppCompatActivity() {
 
             contadorIntentos == 0 ->{
 
-                val aviso = Toast.makeText(this, "Se han agotado los intentos $contadorIntentos. El numero era $numeroIntroducido. Adiooooss!!", Toast.LENGTH_SHORT)
+
+                val mensaje_derrota = resources.getString(R.string.mensaje_derrota)
+
+                val aviso = Toast.makeText(this, mensaje_derrota, Toast.LENGTH_SHORT)
+                //MÉTODO CARLOS, poniendo como segundo parametro el atributo R
+                //val aviso2 = Toast.makeText(this, R.string.mensaje_derrota, Toast.LENGTH_SHORT)
                 aviso.show()
                // finish()
                 this.mensaje ="Te quedan $contadorIntentos intentos"
@@ -83,6 +88,7 @@ class AdivinaActivity : AppCompatActivity() {
             }
 
             numeroIntroducido.toInt() < numeroRandom ->{
+
 
                 val aviso = Toast.makeText(this, "Tu número $numeroIntroducido es menor al que he pensado. Prueba de nuevo. Te quedan $contadorIntentos intentos", Toast.LENGTH_SHORT)
                 aviso.show()
@@ -99,7 +105,8 @@ class AdivinaActivity : AppCompatActivity() {
             }
             numeroIntroducido.toInt() == numeroRandom ->{
 
-                val aviso = Toast.makeText(this, "Efectivamente, el numero correcto es $numeroIntroducido. Adiooooss!!", Toast.LENGTH_SHORT)
+                val mensaje_victoria = resources.getString(R.string.mensaje_victoria)
+                val aviso = Toast.makeText(this, mensaje_victoria, Toast.LENGTH_SHORT)
                 aviso.show()
                // finish()
                 findViewById<Button>(R.id.botonreiniciar).visibility=View.VISIBLE

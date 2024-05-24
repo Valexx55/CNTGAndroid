@@ -25,11 +25,14 @@ class ResultadoImcActivity : AppCompatActivity() {
         //Mostrar el resultado
         //intent es el precursor, el Intent que lanzó esta actividad
         val resultadoImc = intent.getFloatExtra("IMC_RESULTADO", 0f)
+        //this.getIntent().getFloatExtra() ESITLO JAVA
 
         when
         {
             resultadoImc < 16 -> {
-                this.mostarResultado(R.drawable.imc_desnutrido, TipoImc.DESNUTRIDO.toString())
+
+                //this.mostarResultado(R.drawable.imc_desnutrido, resources.getString(R.string.imc_desnutrido))
+                this.mostarResultado(R.drawable.imc_delgado, TipoImc.DESNUTRIDO.toString())
             }
             resultadoImc >= 16 && resultadoImc < 18  -> {
                 this.mostarResultado(R.drawable.imc_delgado, TipoImc.DELGADO.toString())

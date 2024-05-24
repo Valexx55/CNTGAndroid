@@ -3,4 +3,7 @@
     <string name="mensaje_peso">Enter weight (kg)</string>
     <string name="mensaje_altura">Enter height (m)</string>
     <string name="boton_calcular">CALCULATE</string>
+    <string name="mensaje_victoria">YOU WIN</string>
+    <string name="mensaje_derrota">YOU LOSE</string>
+    <string name="imc_desnutrido">STARVING</string>
 </resources>

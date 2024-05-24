@@ -3,4 +3,7 @@
     <string name="mensaje_peso">Intro peso (kg)</string>
     <string name="mensaje_altura">Intro altura (m)</string>
     <string name="boton_calcular">CALCULAR</string>
+    <string name="mensaje_victoria">ACERTASTE</string>
+    <string name="mensaje_derrota">PERDISTE</string>
+    <string name="imc_desnutrido">DESNUTRIDO</string>
 </resources>

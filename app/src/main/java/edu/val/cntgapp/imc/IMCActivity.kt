@@ -33,6 +33,7 @@ class IMCActivity : AppCompatActivity() {
             Log.d(Constantes.ETIQUETA_LOG, "Ha tocado el botón")
 
         }*/
+
     }
 
     fun calcularIMC(view: View)//:Unit cuando no devuelve nada

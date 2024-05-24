@@ -3,4 +3,7 @@
     <string name="mensaje_peso">Canto pesas</string>
     <string name="mensaje_altura">Canto mides</string>
     <string name="boton_calcular">CALCULAR</string>
+    <string name="mensaje_victoria">GANACHES</string>
+    <string name="mensaje_derrota">PERDICHES</string>
+    <string name="imc_desnutrido">ESFAMEADO</string>
 </resources>
