@@ -3,6 +3,7 @@ package edu.`val`.cntgapp.adivina
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -58,8 +59,15 @@ class AdivinaActivity : AppCompatActivity() {
 
         // No entiendo porque carallo despues del primer intento sigue pillando 5 intentos
         contadorIntentos = contadorIntentos -1
-        val numeroIntroducido = textoAdivina.text.toString().toInt()
+        val strNum = textoAdivina.text.toString()
+        val numeroIntroducido = if (strNum=="")
+        {
+            0
+        } else{
+            textoAdivina.text.toString().toInt()
+        }
 
+        Log.d(Constantes.ETIQUETA_LOG, "numeroIntroducido = $numeroIntroducido")
 
         when {
 
@@ -67,8 +75,11 @@ class AdivinaActivity : AppCompatActivity() {
 
                 val aviso = Toast.makeText(this, "Se han agotado los intentos $contadorIntentos. El numero era $numeroIntroducido. Adiooooss!!", Toast.LENGTH_SHORT)
                 aviso.show()
-                finish()
-
+               // finish()
+                this.mensaje ="Te quedan $contadorIntentos intentos"
+                textoMensajeIntentos.text = this.mensaje
+                findViewById<Button>(R.id.botonreiniciar).visibility=View.VISIBLE
+                findViewById<Button>(R.id.buttonIntento).isClickable=false
             }
 
             numeroIntroducido.toInt() < numeroRandom ->{
@@ -90,7 +101,9 @@ class AdivinaActivity : AppCompatActivity() {
 
                 val aviso = Toast.makeText(this, "Efectivamente, el numero correcto es $numeroIntroducido. Adiooooss!!", Toast.LENGTH_SHORT)
                 aviso.show()
-                finish()
+               // finish()
+                findViewById<Button>(R.id.botonreiniciar).visibility=View.VISIBLE
+                findViewById<Button>(R.id.buttonIntento).isClickable=false
 
             }
         }
@@ -107,6 +120,14 @@ class AdivinaActivity : AppCompatActivity() {
         bundle.putInt("NUM_SECRETO", numeroRandom)
         bundle.putInt("NUM_INTENTOS", contadorIntentos)
         bundle.putString("MENSAJE", mensaje)
+    }
+
+    fun reiniciar(view: View) {
+
+        //recreate()
+        finish()
+        startActivity(intent)
+        //finishAffinity()//para finalizar del ttodo
     }
 }
 

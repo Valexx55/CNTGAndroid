@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -27,6 +28,11 @@ class IMCActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val botonCalculo = findViewById<Button>(R.id.botonCalcular)
+        /*botonCalculo.setOnClickListener{
+            Log.d(Constantes.ETIQUETA_LOG, "Ha tocado el botón")
+
+        }*/
     }
 
     fun calcularIMC(view: View)//:Unit cuando no devuelve nada
