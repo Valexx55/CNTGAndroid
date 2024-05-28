@@ -24,3 +24,8 @@ SIN COMPILAR
 data CLASS kt -> Para Beans, POJOS, dto, modelo, tipos de datos sencillos que no tienen ninguna funcionalidad
 extra, sólo usamos los atributos básicos, mejor utilizar las data class que las class de kotlin
 nos dan hechas algunas funciones como el toString, equals...
+
+
+RECYCLER -> LA LISTA VISUAL
+ADAPTER -> PROVEEDOR DE DATOS AL RECYCLER
+VIEWHOLDER -> LA CAJITA/VISTA/FILA QUE SE RECICLA
