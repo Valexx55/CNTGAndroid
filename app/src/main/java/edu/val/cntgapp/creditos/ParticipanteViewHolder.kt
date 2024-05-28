@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import edu.`val`.cntgapp.R
 import edu.`val`.cntgapp.kotlinbasico.Participante
@@ -46,7 +47,7 @@ class ParticipanteViewHolder(itemView:View): ViewHolder(itemView)  {
                 this.itemView.context.startActivity(intentWeb)    //tiro
             }
         } else {
-            //toast enlace no disponible
+            Toast.makeText(this.itemView.context, "URL NO DISPONIBLE", Toast.LENGTH_LONG).show()
         }
 
     }

@@ -1,6 +1,7 @@
 package edu.`val`.cntgapp.creditos
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -33,4 +34,6 @@ class CreditosActivity : AppCompatActivity() {
         this.recyclerView.layoutManager = layoutRecycler
 
     }
+
+
 }

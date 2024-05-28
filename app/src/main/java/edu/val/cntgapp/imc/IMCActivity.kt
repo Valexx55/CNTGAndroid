@@ -3,6 +3,8 @@ package edu.`val`.cntgapp.imc
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -58,5 +60,17 @@ class IMCActivity : AppCompatActivity() {
         val intentResultado : Intent = Intent(this, ResultadoImcActivity::class.java)
         intentResultado.putExtra("IMC_RESULTADO", imc)//guardo en el saco el imc
         startActivity(intentResultado)//lanzo la otra pantalla de resultado EXPLÍCITO
+    }
+
+    //para dibujar mi menú en la app bar / tool bar hay que sobreescribir el método onCreateOptionsMenu
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_imc, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    //este método será invocado por Android cuando el usuario toque alguna opción del App Bar
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        Log.d(Constantes.ETIQUETA_LOG, "Ha tocado el menú")
+        return super.onOptionsItemSelected(item)
     }
 }
