@@ -1,5 +1,6 @@
 package edu.`val`.cntgapp.imc
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -70,7 +72,46 @@ class IMCActivity : AppCompatActivity() {
 
     //este método será invocado por Android cuando el usuario toque alguna opción del App Bar
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        Log.d(Constantes.ETIQUETA_LOG, "Ha tocado el menú")
+        Log.d(Constantes.ETIQUETA_LOG, "Ha tocado el menú ")
+        when (item.itemId)
+        {
+            R.id.opcionLimpiar -> {
+                Log.d(Constantes.ETIQUETA_LOG, "Ha tocado limpiar ")
+                limpiarFormulario()
+
+            }
+            R.id.opcionSalir -> {
+                Log.d(Constantes.ETIQUETA_LOG, "Ha tocado Salir ")
+                salir()
+
+            }
+        }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun salir() {
+        //mostrar un diálogo típico de estás seguro??=
+
+        var alertDialog = AlertDialog.Builder(this)
+            .setTitle("SALIR")
+            .setMessage("¿Desea salir?")
+            .setNegativeButton("NO"){ dialog:DialogInterface, opcion:Int ->
+                dialog.cancel()
+            }
+            .setPositiveButton("SÍ"){ dialog:DialogInterface, opcion:Int ->
+                this.finish()
+
+            }.create()
+
+        alertDialog.show()
+        //finishAffinity()//es para salir de la app
+        //finish()//salir de la actividad
+    }
+
+    private fun limpiarFormulario() {
+        findViewById<EditText>(R.id.editTextPeso).text.clear()
+        findViewById<EditText>(R.id.editTextAltura).text.clear()
+
+
     }
 }
