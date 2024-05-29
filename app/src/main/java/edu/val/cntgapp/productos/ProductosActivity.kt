@@ -48,6 +48,7 @@ class ProductosActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 //aquí, pedimos los datos
 
+                //this@ProductosActivity //sería el this de fuera
                 Log.d(Constantes.ETIQUETA_LOG, "Pidiendo Datos")
                 Log.d(Constantes.ETIQUETA_LOG, "Mostrar  Datos recibidos")
 
