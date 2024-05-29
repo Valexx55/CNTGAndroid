@@ -6,6 +6,10 @@
     QUE ANDROID PERMITA A MI APP CONECTARSE A INTERNET-->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- ESTE PERMISO, ES NECESARIO DECLARLO EN EL MANIFEST PARA
+    QUE ANDROID PERMITA A MI APP ACCEDER AL ESTADO DE LA RED-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"

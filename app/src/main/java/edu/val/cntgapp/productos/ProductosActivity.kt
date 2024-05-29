@@ -2,6 +2,7 @@ package edu.`val`.cntgapp.productos
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import edu.`val`.cntgapp.R
 import edu.`val`.cntgapp.util.Constantes
+import edu.`val`.cntgapp.util.RedUtil
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -39,28 +41,32 @@ class ProductosActivity : AppCompatActivity() {
         productoService = retrofit.create(ProductoService::class.java)
 
 
+        if (RedUtil.hayInternet(this))
+        {
+            //CARGAR PRODCUTOS
+            //CORUTINA - PEQUEÑO PROGRAMA PARALELO, QUE SE ENCARGAR DE HACER LA COMUNICACIÓN HTTP
+            lifecycleScope.launch {
+                //aquí, pedimos los datos
 
+                Log.d(Constantes.ETIQUETA_LOG, "Pidiendo Datos")
+                Log.d(Constantes.ETIQUETA_LOG, "Mostrar  Datos recibidos")
 
-        //CARGAR PRODCUTOS
-        //CORUTINA - PEQUEÑO PROGRAMA PARALELO, QUE SE ENCARGAR DE HACER LA COMUNICACIÓN HTTP
-        lifecycleScope.launch {
-            //aquí, pedimos los datos
+                listadoProductos = productoService.obtenerProductos()
+                Log.d(Constantes.ETIQUETA_LOG, "Hemos RX ${listadoProductos.size} productos")
+                //it es una variable auxiliar, predefinida en Kotlin
+                //para cuando recorro una colección (itero)
+                //que va asumiendo el valor de cada elemento de la colección
+                listadoProductos.forEach{
+                    Log.d(Constantes.ETIQUETA_LOG, "Producto ${it.toString()}")
+                }
 
-            Log.d(Constantes.ETIQUETA_LOG, "Pidiendo Datos")
-            Log.d(Constantes.ETIQUETA_LOG, "Mostrar  Datos recibidos")
-
-            listadoProductos = productoService.obtenerProductos()
-            Log.d(Constantes.ETIQUETA_LOG, "Hemos RX ${listadoProductos.size} productos")
-            //it es una variable auxiliar, predefinida en Kotlin
-            //para cuando recorro una colección (itero)
-            //que va asumiendo el valor de cada elemento de la colección
-            listadoProductos.forEach{
-                Log.d(Constantes.ETIQUETA_LOG, "Producto ${it.toString()}")
+                Log.d(Constantes.ETIQUETA_LOG, "Mostrar  Datos recibidos")
             }
-
-
-            Log.d(Constantes.ETIQUETA_LOG, "Mostrar  Datos recibidos")
+        } else {
+            Toast.makeText(this, "SIN CONEXIÓN A INTERNET", Toast.LENGTH_LONG).show()
+            Log.w(Constantes.ETIQUETA_LOG, "SIN CONEXIÓN A INTERNET")
         }
+
         Log.d(Constantes.ETIQUETA_LOG, "en Oncreate")
     }
 
