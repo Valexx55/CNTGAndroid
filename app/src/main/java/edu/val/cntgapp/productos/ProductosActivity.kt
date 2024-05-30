@@ -9,12 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.slider.Slider
 import edu.`val`.cntgapp.R
 import edu.`val`.cntgapp.util.Constantes
 import edu.`val`.cntgapp.util.RedUtil
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.math.roundToInt
 
 /**
  *
@@ -31,6 +33,7 @@ class ProductosActivity : AppCompatActivity() {
     lateinit var recyclerView:RecyclerView
     lateinit var productosAdapter: ProductosAdapter
     lateinit var progressBar: ProgressBar
+    lateinit var slider: Slider
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,6 +80,7 @@ class ProductosActivity : AppCompatActivity() {
                 Log.d(Constantes.ETIQUETA_LOG, "Mostrar  Datos recibidos")
                 this@ProductosActivity.progressBar = findViewById<ProgressBar>(R.id.barraProgreso)
                 this@ProductosActivity.progressBar.visibility = View.INVISIBLE
+                actualizarPostCarga()
             }
         } else {
             Toast.makeText(this, "SIN CONEXIÓN A INTERNET", Toast.LENGTH_LONG).show()
@@ -84,6 +88,40 @@ class ProductosActivity : AppCompatActivity() {
         }
 
         Log.d(Constantes.ETIQUETA_LOG, "en Oncreate")
+    }
+
+    private fun actualizarPostCarga() {
+        //INICIALIZAR EL SLIDER
+        this.slider = findViewById<Slider>(R.id.sliderprecio)
+        this.slider.visibility = View.VISIBLE
+
+        //obtenemos el producto producto más caro
+        var productoMasCaro = listadoProductos.maxBy { it.price.toFloat() }
+        //var precioMasCaro = listadoProductos.map { it.price.toFloat() }.max()
+        //obtenemos el  producto más barato
+        var prodcutoMasBarato = listadoProductos.minBy { it.price.toFloat() }
+        //obtenemos el valor producto medio
+        var precioMedio = listadoProductos.map { it.price.toFloat() }.average()
+
+
+        slider.value = precioMedio.toFloat() // valor por defecto donde aparece ubicado
+        slider.valueFrom = prodcutoMasBarato.price.toFloat()// valor mínimo del slider
+        slider.valueTo = productoMasCaro.price.toFloat()// valor máximo del slider
+
+        //este método dibuja la banderita/el valor donde se para el slider
+        slider.setLabelFormatter {
+            "${it.roundToInt()} precio máx"
+        }
+
+        slider.addOnChangeListener { slider, valor, isUser ->
+            Log.d(Constantes.ETIQUETA_LOG, "Valor actual = $valor $isUser")
+            var listadoProductosFiltrados = ListadoProductos()
+            listadoProductos.filter { producto -> producto.price.toFloat() <= valor }.toCollection(listadoProductosFiltrados)
+            productosAdapter.listaProductos = listadoProductosFiltrados
+            productosAdapter.notifyDataSetChanged() //los datos de la lista han cambiado, repíntate
+
+        }
+
     }
 
     override fun onStart() {
