@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <!-- ESTE PERMISO, ES NECESARIO DECLARLO EN EL MANIFEST PARA
-    QUE ANDROID PERMITA A MI APP CONECTARSE A INTERNET-->
+    <!--
+    ESTE PERMISO, ES NECESARIO DECLARLO EN EL MANIFEST PARA
+    QUE ANDROID PERMITA A MI APP CONECTARSE A INTERNET
+    -->
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- ESTE PERMISO, ES NECESARIO DECLARLO EN EL MANIFEST PARA
-    QUE ANDROID PERMITA A MI APP ACCEDER AL ESTADO DE LA RED-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!--
+ ESTE PERMISO, ES NECESARIO DECLARLO EN EL MANIFEST PARA
+    QUE ANDROID PERMITA A MI APP ACCEDER AL ESTADO DE LA RED
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -21,14 +23,23 @@
         android:theme="@style/Theme.CNTGApp"
         tools:targetApi="31">
         <activity
+            android:name=".perros.PerrosActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".productos.ProductosActivity"
             android:exported="true"
             android:label="Listado Productos">
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".creditos.CreditosActivity"
@@ -75,11 +86,12 @@
             android:screenOrientation="portrait">
 
             <!-- COMENATARIOS TIPO XML / HTML DECLARO LAS ACTIVIES -->
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.MAIN" />-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-            <!--            </intent-filter>-->
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".versiones.VersionesActivity"
