@@ -3,11 +3,10 @@ package edu.`val`.cntgapp.productos
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import edu.`val`.cntgapp.R
 import edu.`val`.cntgapp.util.Constantes
 import edu.`val`.cntgapp.util.RedUtil
@@ -27,6 +26,9 @@ class ProductosActivity : AppCompatActivity() {
 
     lateinit var productoService: ProductoService
     lateinit var listadoProductos: ListadoProductos
+    lateinit var recyclerView:RecyclerView
+    lateinit var productosAdapter: ProductosAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_productos)
@@ -39,6 +41,8 @@ class ProductosActivity : AppCompatActivity() {
             .build()
 
         productoService = retrofit.create(ProductoService::class.java)
+
+
 
 
         if (RedUtil.hayInternet(this))
@@ -60,6 +64,12 @@ class ProductosActivity : AppCompatActivity() {
                 listadoProductos.forEach{
                     Log.d(Constantes.ETIQUETA_LOG, "Producto ${it.toString()}")
                 }
+
+                this@ProductosActivity.recyclerView = findViewById<RecyclerView>(R.id.recyclerViewProductos)
+                val layoutRecycler: RecyclerView.LayoutManager = LinearLayoutManager(this@ProductosActivity, RecyclerView.VERTICAL,false)
+                recyclerView.layoutManager = layoutRecycler
+                productosAdapter = ProductosAdapter(listadoProductos)
+                recyclerView.adapter = productosAdapter
 
                 Log.d(Constantes.ETIQUETA_LOG, "Mostrar  Datos recibidos")
             }
