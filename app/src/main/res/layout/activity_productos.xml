@@ -7,14 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".productos.ProductosActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewProductos"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewProductos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/barraProgreso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            ></ProgressBar>
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

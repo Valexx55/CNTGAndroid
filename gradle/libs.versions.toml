@@ -11,6 +11,7 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 retrofit = "2.11.0"
 converterGson = "2.11.0"
+picasso = "2.71828"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -23,6 +24,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converterGson" }
+picasso = { group = "com.squareup.picasso", name = "picasso", version.ref = "picasso" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

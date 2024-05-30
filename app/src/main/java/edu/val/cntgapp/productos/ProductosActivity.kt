@@ -2,6 +2,8 @@ package edu.`val`.cntgapp.productos
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -28,6 +30,7 @@ class ProductosActivity : AppCompatActivity() {
     lateinit var listadoProductos: ListadoProductos
     lateinit var recyclerView:RecyclerView
     lateinit var productosAdapter: ProductosAdapter
+    lateinit var progressBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,6 +75,8 @@ class ProductosActivity : AppCompatActivity() {
                 recyclerView.adapter = productosAdapter
 
                 Log.d(Constantes.ETIQUETA_LOG, "Mostrar  Datos recibidos")
+                this@ProductosActivity.progressBar = findViewById<ProgressBar>(R.id.barraProgreso)
+                this@ProductosActivity.progressBar.visibility = View.INVISIBLE
             }
         } else {
             Toast.makeText(this, "SIN CONEXIÓN A INTERNET", Toast.LENGTH_LONG).show()

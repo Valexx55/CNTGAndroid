@@ -11,7 +11,7 @@ class ProductosAdapter(var listaProductos: List<ListadoProductosItem>) : Recycle
         var productosViewHolder: ProductosViewHolder
 
         var layoutInflater = LayoutInflater.from(parent.context)
-        var filaProducto = layoutInflater.inflate(R.layout.fila_prodcuto, parent, false)
+        var filaProducto = layoutInflater.inflate(R.layout.fila_producto, parent, false)
 
         productosViewHolder = ProductosViewHolder(filaProducto)
 
