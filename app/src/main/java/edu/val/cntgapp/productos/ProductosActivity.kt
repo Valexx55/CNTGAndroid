@@ -74,6 +74,8 @@ class ProductosActivity : AppCompatActivity() {
                 this@ProductosActivity.recyclerView = findViewById<RecyclerView>(R.id.recyclerViewProductos)
                 val layoutRecycler: RecyclerView.LayoutManager = LinearLayoutManager(this@ProductosActivity, RecyclerView.VERTICAL,false)
                 recyclerView.layoutManager = layoutRecycler
+
+                //TODO INICIAR SLIDER y FILTRAR LA LISTA CON EL PRECIO MEDIO CALCULADO
                 productosAdapter = ProductosAdapter(listadoProductos)
                 recyclerView.adapter = productosAdapter
 
@@ -104,7 +106,7 @@ class ProductosActivity : AppCompatActivity() {
         var precioMedio = listadoProductos.map { it.price.toFloat() }.average()
 
 
-        slider.value = precioMedio.toFloat() // valor por defecto donde aparece ubicado
+        slider.value = productoMasCaro.price.toFloat()//precioMedio.toFloat() // valor por defecto donde aparece ubicado
         slider.valueFrom = prodcutoMasBarato.price.toFloat()// valor mínimo del slider
         slider.valueTo = productoMasCaro.price.toFloat()// valor máximo del slider
 
