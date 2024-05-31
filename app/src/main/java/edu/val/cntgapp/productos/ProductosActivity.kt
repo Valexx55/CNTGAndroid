@@ -7,6 +7,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.slider.Slider
@@ -72,7 +73,9 @@ class ProductosActivity : AppCompatActivity() {
                 }
 
                 this@ProductosActivity.recyclerView = findViewById<RecyclerView>(R.id.recyclerViewProductos)
+                //val layoutRecycler: RecyclerView.LayoutManager = LinearLayoutManager(this@ProductosActivity, RecyclerView.HORIZONTAL,true)
                 val layoutRecycler: RecyclerView.LayoutManager = LinearLayoutManager(this@ProductosActivity, RecyclerView.VERTICAL,false)
+                //var layoutRecycler: RecyclerView.LayoutManager = GridLayoutManager(this@ProductosActivity, 2)
                 recyclerView.layoutManager = layoutRecycler
 
                 //TODO INICIAR SLIDER y FILTRAR LA LISTA CON EL PRECIO MEDIO CALCULADO

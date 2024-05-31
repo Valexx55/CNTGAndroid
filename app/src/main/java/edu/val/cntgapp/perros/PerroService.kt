@@ -8,7 +8,7 @@ import retrofit2.http.Path
  */
 interface PerroService {
 
-    //https://dog.ceo/api/breed/african/images
+        //https://dog.ceo/api/breed/african/images
     @GET("api/breed/{raza}/images")
     suspend fun listarPerrosPorRaza(@Path("raza") raza:String):ListadoPerros
 }

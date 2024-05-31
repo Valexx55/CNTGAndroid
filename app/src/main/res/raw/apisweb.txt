@@ -1,0 +1,20 @@
+https://dog.ceo/dog-api/
+https://placekitten.com/
+https://jsonplaceholder.typicode.com/
+https://rickandmortyapi.com/
+http://superheroapi.com/
+https://pixabay.com/api/docs/
+https://developer.accuweather.com/
+https://pokeapi.co/
+https://www.resultados-futbol.com/api/documentacion
+https://www.themoviedb.org/
+http://www.omdbapi.com/
+https://newsapi.org/
+https://swapi.dev/api (( STAR WARS))
+https://itunes.apple.com/search/?media=music&term=
+https://openweathermap.org/api
+https://developers.google.com/maps/documentation/places/web-service/overview (places)
+https://datos.madrid.es/portal/site/egob/menuitem.214413fe61bdd68a53318ba0a8a409a0/?vgnextoid=b07e0f7c5ff9e510VgnVCM1000008a4a900aRCRD&vgnextchannel=b07e0f7c5ff9e510VgnVCM1000008a4a900aRCRD&vgnextfmt=default (api REST MADRID)
+https://api.chucknorris.io/
+https://opendata.aemet.es/dist/index.html
+https://breakingbadapi.com/
