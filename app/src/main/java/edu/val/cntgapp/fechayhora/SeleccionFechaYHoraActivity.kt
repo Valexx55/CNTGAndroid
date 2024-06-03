@@ -45,6 +45,10 @@ class SeleccionFechaYHoraActivity : AppCompatActivity(), OnFocusChangeListener {
                 R.id.cajaFecha ->
                 {
                     Log.d(Constantes.ETIQUETA_LOG, "La caja fecha ha ganado el foco")
+                    //creamos el fragmet
+                    val dialogoFragmentCalendario: DialogFragment = SeleccionFecha()
+                    //lo visualizamos
+                    dialogoFragmentCalendario.show(supportFragmentManager, "CALENDARIO")
                 }
 
             }
@@ -54,6 +58,12 @@ class SeleccionFechaYHoraActivity : AppCompatActivity(), OnFocusChangeListener {
     fun actualizarHoraSeleccionada (hora:String)
     {
         this.binding.cajaHora.setText(hora)
+
+    }
+
+    fun actualizarFechaSeleccionada (fecha:String)
+    {
+        this.binding.cajaFecha.setText(fecha)
 
     }
 }
