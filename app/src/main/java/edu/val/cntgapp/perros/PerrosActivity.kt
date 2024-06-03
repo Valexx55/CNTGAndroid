@@ -12,6 +12,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import edu.`val`.cntgapp.R
 import edu.`val`.cntgapp.databinding.ActivityPerrosBinding
 import edu.`val`.cntgapp.util.Constantes
@@ -47,12 +49,21 @@ class PerrosActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         this.razaSeleccionada = (opcionTocada as TextView).text.toString()
         Log.d(Constantes.ETIQUETA_LOG, "Item seleccionado $razaSeleccionada")
+        this.mostrarSnackBar()
 
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
         //nada que hacer
         //lo tendría que implemntar si una opción de las disponibles en el spinner, deja de estarlo
+    }
+
+    fun mostrarSnackBar ():Unit
+    {
+        var snackbar: Snackbar = Snackbar.make(binding.main, "LISTADO RECUPERADO", BaseTransientBottomBar.LENGTH_LONG )
+        snackbar.setAction("CERRAR"){vista->Log.d(Constantes.ETIQUETA_LOG, "Action SnackBar Tocado")}
+        snackbar.setTextColor(getColor(R.color.amarilloaction))
+        snackbar.show()
     }
 }
 

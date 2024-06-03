@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="griscabecera">#9F9C9C</color>
+    <color name="amarilloaction">#FFEB3B</color>
 </resources>
