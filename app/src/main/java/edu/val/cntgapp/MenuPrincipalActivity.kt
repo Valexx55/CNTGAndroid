@@ -1,6 +1,7 @@
 package edu.`val`.cntgapp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -65,7 +66,13 @@ class MenuPrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationIt
         when (opcionMenu.order)
         {
             0 -> {objetoClass = VersionesActivity::class.java }
-            1 -> {objetoClass = WebActivity::class.java }
+            1 -> {
+                objetoClass = WebActivity::class.java
+                //val uri = Uri.parse("https://cntg.xunta.gal/")//paso de string a uri
+                //val intentImplicito = Intent(Intent.ACTION_VIEW, uri )//QUIERO VER, UNA WEB
+                //startActivity(intentImplicito)
+                //var intentweb = Intent(Intent.ACTION_VIEW, )
+            }
             2 -> {objetoClass = CreditosActivity::class.java }
             3 -> {objetoClass = IMCActivity::class.java }
             4 -> {objetoClass = BusquedaActivity::class.java }
