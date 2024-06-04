@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -107,6 +108,10 @@ class ProductosActivity : AppCompatActivity() {
         var prodcutoMasBarato = listadoProductos.minBy { it.price.toFloat() }
         //obtenemos el valor producto medio
         var precioMedio = listadoProductos.map { it.price.toFloat() }.average()
+
+        findViewById<TextView>(R.id.textViewPrecioMedio).text = ""+precioMedio
+        findViewById<TextView>(R.id.textViewPrecioMasBarato).text = ""+prodcutoMasBarato.price
+        findViewById<TextView>(R.id.textViewPrecioMasCaro).text = ""+productoMasCaro.price
 
 
         slider.value = productoMasCaro.price.toFloat()//precioMedio.toFloat() // valor por defecto donde aparece ubicado
