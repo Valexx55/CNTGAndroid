@@ -23,30 +23,36 @@
         android:theme="@style/Theme.CNTGApp"
         tools:targetApi="31">
         <activity
+            android:name=".tabs.TabsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MenuPrincipalActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".webview.WebActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.VIEW" />-->
 
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.VIEW" /> -->
 
-<!--                <data-->
-<!--                    android:host="cntg.xunta.gal"-->
-<!--                    android:scheme="http" />-->
-<!--                <data-->
-<!--                    android:host="cntg.xunta.gal"-->
-<!--                    android:scheme="https" />-->
-<!--            </intent-filter>-->
+
+            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+            <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+
+
+            <!-- <data -->
+            <!-- android:host="cntg.xunta.gal" -->
+            <!-- android:scheme="http" /> -->
+            <!-- <data -->
+            <!-- android:host="cntg.xunta.gal" -->
+            <!-- android:scheme="https" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".fechayhora.SeleccionFechaYHoraActivity"

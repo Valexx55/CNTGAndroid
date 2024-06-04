@@ -58,6 +58,12 @@
             android:icon="@drawable/baseline_double_arrow_24"
             android:orderInCategory="8"
             android:title="Listado de Productos"/>
+
+        <item
+            app:showAsAction="always"
+            android:icon="@drawable/baseline_double_arrow_24"
+            android:orderInCategory="9"
+            android:title="Tabs"/>
     </menu>
 </item>
 </menu>

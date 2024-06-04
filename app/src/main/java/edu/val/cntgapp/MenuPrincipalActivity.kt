@@ -16,6 +16,7 @@ import edu.`val`.cntgapp.imc.IMCActivity
 import edu.`val`.cntgapp.intents.BusquedaActivity
 import edu.`val`.cntgapp.perros.PerrosActivity
 import edu.`val`.cntgapp.productos.ProductosActivity
+import edu.`val`.cntgapp.tabs.TabsActivity
 import edu.`val`.cntgapp.util.Constantes
 import edu.`val`.cntgapp.versiones.VersionesActivity
 import edu.`val`.cntgapp.webview.WebActivity
@@ -80,6 +81,7 @@ class MenuPrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationIt
             6 -> {objetoClass = AdivinaActivity::class.java }
             7 -> {objetoClass = PerrosActivity::class.java }
             8 -> {objetoClass = ProductosActivity::class.java }
+            9 -> {objetoClass = TabsActivity::class.java }
 
         }
         var intent = Intent(this,objetoClass )
