@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "edu.val.cntgapp"
-        minSdk = 24
+        minSdk = 24 //v7
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

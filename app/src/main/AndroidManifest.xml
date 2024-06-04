@@ -11,6 +11,8 @@
     QUE ANDROID PERMITA A MI APP ACCEDER AL ESTADO DE LA RED
     -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<!-- permiso para que nuestra app pueda laznar notificaciones -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"

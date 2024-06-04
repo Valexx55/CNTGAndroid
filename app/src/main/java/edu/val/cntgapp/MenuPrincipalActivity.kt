@@ -60,6 +60,7 @@ class MenuPrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationIt
     }
 
     override fun onNavigationItemSelected(opcionMenu: MenuItem): Boolean {
+        var esNoti = false
         Log.d(Constantes.ETIQUETA_LOG, "Opcion ${opcionMenu.order} tocada")
         //TODO definir los intents según la opción, lanzando la actividad correspondiente
 
@@ -82,10 +83,18 @@ class MenuPrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationIt
             7 -> {objetoClass = PerrosActivity::class.java }
             8 -> {objetoClass = ProductosActivity::class.java }
             9 -> {objetoClass = TabsActivity::class.java }
+            10 -> {
+                esNoti = true
+                Notificaciones.lanzarNotificacion(this)
+            }
 
         }
-        var intent = Intent(this,objetoClass )
-        startActivity(intent)
+        if (!esNoti)
+        {
+            var intent = Intent(this,objetoClass )
+            startActivity(intent)
+        }
+
         this.drawerLayout.closeDrawers()//cierro el menú sea cual sea la opcion tocada
         return true
     }
