@@ -8,6 +8,16 @@
             android:icon="@drawable/baseline_double_arrow_24"
             android:orderInCategory="0"
             android:title="Versiones"/>
+        <item
+            app:showAsAction="always"
+            android:icon="@drawable/baseline_double_arrow_24"
+            android:orderInCategory="1"
+            android:title="WebActivity"/>
+        <item
+            app:showAsAction="always"
+            android:icon="@drawable/baseline_double_arrow_24"
+            android:orderInCategory="2"
+            android:title="Créditos"/>
     </menu>
 </item>
 <item android:title="EJERCICIOS INTERMEDIOS">
@@ -15,8 +25,24 @@
         <item
             app:showAsAction="always"
             android:icon="@drawable/baseline_double_arrow_24"
-            android:orderInCategory="10"
+            android:orderInCategory="3"
             android:title="IMC"/>
+        <item
+            app:showAsAction="always"
+            android:icon="@drawable/baseline_double_arrow_24"
+            android:orderInCategory="4"
+            android:title="Búsqueda web"/>
+        <item
+            app:showAsAction="always"
+            android:icon="@drawable/baseline_double_arrow_24"
+            android:orderInCategory="5"
+            android:title="Seleccion Fecha Hora"/>
+
+        <item
+            app:showAsAction="always"
+            android:icon="@drawable/baseline_double_arrow_24"
+            android:orderInCategory="6"
+            android:title="Adivina"/>
     </menu>
 </item>
 <item android:title="EJERCICIOS AVANZADOS">
@@ -25,8 +51,13 @@
         <item
             app:showAsAction="always"
             android:icon="@drawable/baseline_double_arrow_24"
-            android:orderInCategory="20"
+            android:orderInCategory="7"
             android:title="Perros"/>
+        <item
+            app:showAsAction="always"
+            android:icon="@drawable/baseline_double_arrow_24"
+            android:orderInCategory="8"
+            android:title="Listado de Productos"/>
     </menu>
 </item>
 </menu>
