@@ -14,6 +14,7 @@ import edu.`val`.cntgapp.creditos.CreditosActivity
 import edu.`val`.cntgapp.fechayhora.SeleccionFechaYHoraActivity
 import edu.`val`.cntgapp.imc.IMCActivity
 import edu.`val`.cntgapp.intents.BusquedaActivity
+import edu.`val`.cntgapp.mapa.MapsActivity
 import edu.`val`.cntgapp.perros.PerrosActivity
 import edu.`val`.cntgapp.productos.ProductosActivity
 import edu.`val`.cntgapp.tabs.TabsActivity
@@ -87,6 +88,7 @@ class MenuPrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationIt
                 esNoti = true
                 Notificaciones.lanzarNotificacion(this)
             }
+            11 -> {objetoClass = MapsActivity::class.java}
 
         }
         if (!esNoti)

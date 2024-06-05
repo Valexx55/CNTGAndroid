@@ -70,6 +70,11 @@
             android:icon="@drawable/baseline_double_arrow_24"
             android:orderInCategory="10"
             android:title="Notificación"/>
+        <item
+            app:showAsAction="always"
+            android:icon="@drawable/baseline_double_arrow_24"
+            android:orderInCategory="11"
+            android:title="Mapas"/>
     </menu>
 </item>
 </menu>

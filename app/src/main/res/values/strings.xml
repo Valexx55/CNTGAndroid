@@ -6,4 +6,5 @@
     <string name="mensaje_victoria">ACERTASTE</string>
     <string name="mensaje_derrota">PERDISTE</string>
     <string name="imc_desnutrido">DESNUTRIDO</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>
