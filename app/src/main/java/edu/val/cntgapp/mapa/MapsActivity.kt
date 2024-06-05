@@ -3,6 +3,8 @@ package edu.`val`.cntgapp.mapa
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Geocoder
+import android.location.Location
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -26,6 +28,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import edu.`val`.cntgapp.R
 import edu.`val`.cntgapp.databinding.ActivityMapsBinding
 import edu.`val`.cntgapp.util.Constantes
+import java.util.Locale
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -145,7 +148,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     Log.d(
                         Constantes.ETIQUETA_LOG,
                         "Ubicacion obtenida ${resultadoUbicacion.lastLocation}"
+
                     )
+                    this@MapsActivity.mostrarUbicacion(resultadoUbicacion.lastLocation)
                     this@MapsActivity.fusedLocationProviderClient.removeLocationUpdates(
                         locationCallback
                     )
@@ -164,6 +169,27 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 null
             )
         }
+
+    }
+
+    fun mostrarDireccionPostal (ubicacion:Location)
+    {
+        val geocoder =  Geocoder(this, Locale("es"))//el objeto que permite pasar de dirección Física a POSTAR
+
+        val direcciones = geocoder.getFromLocation(ubicacion.latitude, ubicacion.longitude, 1)
+
+        if (direcciones!=null && direcciones.size>0)
+        {
+            val direccion = direcciones[0]
+            Log.d(Constantes.ETIQUETA_LOG, "Dirección obtenida = ${direccion.getAddressLine(0)}  CP ${direccion.postalCode} LOCALIDAD ${direccion.locality} ")
+        }
+    }
+    private fun mostrarUbicacion(lastLocation: Location) {
+
+        val ubicacion_Actual = LatLng(lastLocation.latitude, lastLocation.longitude)
+        this.mMap.addMarker(MarkerOptions().position(ubicacion_Actual).title("ESTOY AQUÍ"))
+        this.mMap.moveCamera(CameraUpdateFactory.newLatLng(ubicacion_Actual))
+        mostrarDireccionPostal(lastLocation)
 
     }
 
