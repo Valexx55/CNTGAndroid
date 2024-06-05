@@ -2,6 +2,8 @@ package edu.`val`.cntgapp.mapa
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -11,6 +13,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import edu.`val`.cntgapp.R
 import edu.`val`.cntgapp.databinding.ActivityMapsBinding
+import edu.`val`.cntgapp.util.Constantes
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -47,5 +50,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(MarkerOptions().position(torreHercules).title("La Torre de Hércules"))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(torreHercules, 12f)) //a más zoom, más cerca se ve
         //ap.z
+    }
+
+    fun mostrarUbicacionMapa(view: View) {
+        Log.d(Constantes.ETIQUETA_LOG, "mostrar ubicación mapa...")
     }
 }

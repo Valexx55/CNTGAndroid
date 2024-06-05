@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.picasso)
     implementation(libs.play.services.maps)
+    implementation(libs.play.services.location)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
