@@ -31,10 +31,12 @@ class MenuLoginActivity : AppCompatActivity() {
     fun aNuevaCuenta(view: View) {
         val intentNueva = Intent(this, RegistroNuevoUsuarioActivity::class.java)
         startActivity(intentNueva)
+        finish()
     }
     fun acceder(view: View) {
         val intentLogin = Intent(this, AutenticacionActivity::class.java)
         startActivity(intentLogin)
+        finish()
 
     }
 }

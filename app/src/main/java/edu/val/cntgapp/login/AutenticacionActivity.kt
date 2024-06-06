@@ -1,5 +1,6 @@
 package edu.`val`.cntgapp.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
+import edu.`val`.cntgapp.MenuPrincipalActivity
 import edu.`val`.cntgapp.R
 
 class AutenticacionActivity : AppCompatActivity() {
@@ -37,6 +39,8 @@ class AutenticacionActivity : AppCompatActivity() {
                     resultado ->
                 if (resultado.isSuccessful) {
                     Toast.makeText(this, "USUARIO AUTENTICADO OK", Toast.LENGTH_LONG).show()
+                    finish()
+                    startActivity(Intent(this, MenuPrincipalActivity::class.java))
                 } else {
                     Toast.makeText(this, "ERROR AL AUTENTICAR AL USUARIO", Toast.LENGTH_LONG)
                         .show()

@@ -17,6 +17,7 @@ import edu.`val`.cntgapp.intents.BusquedaActivity
 import edu.`val`.cntgapp.mapa.MapsActivity
 import edu.`val`.cntgapp.perros.PerrosActivity
 import edu.`val`.cntgapp.productos.ProductosActivity
+import edu.`val`.cntgapp.realtimedatabase.InsertarClientesActivity
 import edu.`val`.cntgapp.tabs.TabsActivity
 import edu.`val`.cntgapp.util.Constantes
 import edu.`val`.cntgapp.versiones.VersionesActivity
@@ -89,6 +90,7 @@ class MenuPrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationIt
                 Notificaciones.lanzarNotificacion(this)
             }
             11 -> {objetoClass = MapsActivity::class.java}
+            12 -> {objetoClass = InsertarClientesActivity::class.java}
 
         }
         if (!esNoti)
