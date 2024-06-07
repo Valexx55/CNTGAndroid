@@ -10,7 +10,8 @@ import edu.`val`.cntgapp.R
 
 class WebActivity : AppCompatActivity() {
 
-    val urlRemota:String = "https://cntg.xunta.gal/"
+    //val urlRemota:String = "https://cntg.xunta.gal/"
+    val urlRemota:String = "https://www.google.es/"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web)

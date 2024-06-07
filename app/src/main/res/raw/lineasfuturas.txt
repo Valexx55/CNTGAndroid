@@ -1,0 +1,9 @@
+SERVICIOS
+PERSISTENCIA (preferencias, sqlite, room bd, api ficheros)
+CONTENT PROVIDER
+CAMARA HW / FOTOS / VIDEOS
+RECEIVERS
+JETPACK COMPOSE (altenertiva las vistas XML)
+KOTLIN
+DOWNLOAD MANAGER
+TESTING unitario / interfaz

@@ -18,7 +18,7 @@ class MenuLoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_menu_login)
-        supportActionBar?.hide()//oculto la barra superior AppBar ToolBar
+       // supportActionBar?.hide()//oculto la barra superior AppBar ToolBar
         //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN//pantalla completa
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

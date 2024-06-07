@@ -44,7 +44,8 @@
             android:exported="false" />
         <activity
             android:name=".login.MenuLoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Base.Theme.CNTGApp.SinBarra">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
